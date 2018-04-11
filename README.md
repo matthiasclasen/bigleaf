@@ -9,3 +9,11 @@ Steps:
 5. ./run-lorax
 
 This may produce something in ostree_installer/
+
+Next steps:
+
+1. Test that the installer works
+2. A hosted repo
+3. Replace Fedora branding
+4. Add flathub repo
+5. ...
