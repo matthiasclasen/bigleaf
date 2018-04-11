@@ -1,4 +1,4 @@
-BASE=/home/mclasen/Sources/bigleafos
+BASE=`pwd`
 # TODO use published repo
 REPO=file://$BASE/repo
 
