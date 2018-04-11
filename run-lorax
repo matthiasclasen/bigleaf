@@ -1,0 +1,21 @@
+BASE=/home/mclasen/Sources/bigleafos
+# TODO use published repo
+REPO=file://$BASE/repo
+
+lorax 	--product=Bigleaf \
+	--version=29 \
+	--release=20180410.n.0 \
+	--source=https://kojipkgs.fedoraproject.org/compose/rawhide/latest-Fedora-Rawhide/compose/Everything/x86_64/os/ \
+	--variant=Atomic \
+	--nomacboot \
+	--volid=Bigleaf-ostree-x86_64-29 \
+	--add-template=$BASE/fedora-lorax-templates/ostree-based-installer/lorax-configure-repo.tmpl \
+	--add-template=$BASE/fedora-lorax-templates/ostree-based-installer/lorax-embed-repo.tmpl \
+	--add-template-var=ostree_install_repo=$REPO \
+	--add-template-var=ostree_update_repo=$REPO \
+	--add-template-var=ostree_osname=bigleaf \
+	--add-template-var=ostree_install_ref=fedora/rawhide/x86_64/bigleaf \
+	--add-template-var=ostree_update_ref=fedora/rawhide/x86_64/bigleaf \
+	--logfile=$BASE/lorax.log \
+	--rootfs-size=3 \
+	$BASE/ostree_installer
