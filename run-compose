@@ -1,8 +1,9 @@
 BASE=`pwd`
 
-mkdir repo
-ostree init --repo=repo
+if [ ! -d repo ]; then
+	mkdir repo
+	ostree init --repo=repo
+fi
 rpm-ostree compose tree --repo=$BASE/repo \
-	--write-commitid-to=$BASE/commitid.log \
 	$BASE/workstation-ostree-config/fedora-ostree-workstation.json
 # TODO: publish the repo
