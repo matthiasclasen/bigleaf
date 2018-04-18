@@ -2,6 +2,7 @@ BASE=`pwd`
 # TODO use published repo
 REPO=file://$BASE/repo
 
+rm -rf $BASE/ostree_installer
 lorax 	--product=Bigleaf \
 	--version=29 \
 	--release=20180410.n.0 \
@@ -17,5 +18,6 @@ lorax 	--product=Bigleaf \
 	--add-template-var=ostree_install_ref=fedora/rawhide/x86_64/bigleaf \
 	--add-template-var=ostree_update_ref=fedora/rawhide/x86_64/bigleaf \
 	--logfile=$BASE/lorax.log \
-	--rootfs-size=3 \
+	--tmp=$BASE/tmp \
+	--rootfs-size=8 \
 	$BASE/ostree_installer
