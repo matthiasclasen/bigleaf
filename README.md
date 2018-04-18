@@ -4,9 +4,10 @@ Steps:
 
 1. dnf install rpm-ostree lorax
 2. git clone https://pagure.io/workstation-ostree-config
-3. git clone https://pagure.io/fedora-lorax-templates.git
-4. ./run-compose
-5. ./run-lorax
+3. Apply workstation-ostree-config.patch in the checkout
+4. git clone https://pagure.io/fedora-lorax-templates.git
+5. ./run-compose
+6. ./run-lorax
 
 This may produce something in ostree_installer/
 
